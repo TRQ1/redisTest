@@ -1,0 +1,19 @@
+{
+  "name": "redisTest",
+  "version": "0.0.1",
+  "description": "Connet to Redis on AWS",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
