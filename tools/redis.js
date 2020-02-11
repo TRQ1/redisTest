@@ -1,6 +1,8 @@
 'use stric';
 
-require('dotenv').config({path: '../.env'});
+import dotev from 'dotenv';
+
+dotev.config()
 
 const redisPort = process.env.REDIS_PORT;
 const redisUrl = process.env.REDIS_URL;
@@ -12,20 +14,20 @@ client.on("error", function (err) {
     console.log("Error " + err);
 });
 
-const getFun = async(key) => {
+export const getFun = async(key) => {
     try {
         const res = await client.get(key);
         return console.log(res);
     } catch(err) {
         console.log(err);
     }
-}
+};
 
-const setFun = async(key, value) => {
+export const setFun = async(key, value) => {
     try {
         const res = await client.set(key, value, redis.print);
         return console.log(res);
     } catch(err) {
         console.log(err);
     }
-}
+};
