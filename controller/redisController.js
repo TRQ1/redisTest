@@ -1,21 +1,27 @@
-import util from 'util';
-import redisClient from '../tools/redis.js';
+import { getFun, setFun } from '../tools/redis';
 
-export const getMain = (req, res) => {
-    return res.json({result: "main success"});
+export const home = async (req, res) => {
+    res.json({result: 'home'});
 };
 
-export const getRedis = (req, res) => {
+export const getRedis = async(req, res) => {
     try {
-        return res.json({result: "success"});
+        const callNumber = req.params.call;
+        const key = req.params.key;
+        console.log(callNumber)
+        console.log(key)
+        for (var i = 0; i < callNumber; i++) {
+            await getFun(key);
+        }
+        return res.json({ result: 'getRedis' });
     } catch(e) {
-        return res.json({result: "fail", message: e.message});
+        console.log(e);
     }
 };
 
-export const setRedis = (req, res) => {
+export const setRedis = async(req, res) => {
     try {
-        return res.json({result: "success"});
+        return res.json({result: "success1"});
     } catch(e) {
         return res.json({result: "fail", message: e.message});
     }
