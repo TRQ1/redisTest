@@ -1,7 +1,11 @@
-const REDIS = "/redis/:target/:board";
+const HOME = '/';
+const GET_REDIS = '/getredis/:key/:call';
+const SET_REDIS = '/setredis';
 
- const routes = {
-     redis: REDIS
+const routes = {
+    home: HOME,
+    getredis: GET_REDIS,
+    setredis: SET_REDIS
 }
 
 export default routes;

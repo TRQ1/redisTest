@@ -1,14 +1,11 @@
-import express from "express";
-import routes from "../routes.js"
-import { getMain, getRedis, setRedis } from "../controllers/redisController.js";
+import express from 'express';
+import routes from '../routes';
+import { home, getRedis, setRedis } from '../controller/redisController';
 
-const globalRouter = express.Router();
+const redisRouter = express.Router();
 
-/**
- * Global redirect list
- */
-globalRouter.get('/', getMain);
-globalRouter.get(routes.redis, getRedis);
-globalRouter.post(routes.redis, setRedis);
+redisRouter.get(routes.home, home);
+redisRouter.post(routes.getredis, getRedis);
+redisRouter.post(routes.setredis, setRedis);
 
-export default globalRouter;
+export default redisRouter;
