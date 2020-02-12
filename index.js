@@ -16,5 +16,6 @@ app.use(Middleware);
 app.use(routes.home, redisRouter);
 app.use(routes.getredis, redisRouter);
 app.use(routes.setredis, redisRouter);
+app.use(routes.hmsetredis, redisRouter);
 
 export default app;
